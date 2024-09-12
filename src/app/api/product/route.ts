@@ -1,21 +1,24 @@
-import DetailProduct from "@/app/product/[...slug]/page";
+import DetailProduct from "@/app/product/[[...slug]]/page";
 import { NextResponse } from "next/server";
 
 const data = [
     {
         id: 1,
-        name: 't-shirt',
-        price: 120000
+        title: 'YONEX ASTROX 88 D PRO',
+        price: 50,
+        image: 'https://www.yonex.com/media/catalog/product/3/a/3ax88d-p_076-1_02.png?quality=80&fit=bounds&height=300&width=240&canvas=240:300'
     },
     {
         id: 2,
-        name: 'hoodie',
-        price: 150000
+        title: 'YONEX ASTROX 3 DG HF',
+        price: 65,
+        image: 'https://www.yonex.com/media/catalog/product/a/x/ax3dg_hf.png?quality=80&fit=bounds&height=300&width=240&canvas=240:300'
     },
     {
         id: 3,
-        name: 'sweater',
-        price: 130000
+        title: 'YONEX ASTROX 88 S TOUR',
+        price: 52,
+        image: 'https://www.yonex.com/media/catalog/product/3/a/3ax88s-t_417-1_02.png?quality=80&fit=bounds&height=300&width=240&canvas=240:300'
     },
 ];
 
