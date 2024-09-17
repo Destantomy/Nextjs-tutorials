@@ -1,0 +1,1 @@
+In Parallel Routes method when we want to render one route into another route we can just add ' @ ' in front of its folder name that used as route. Ex: we want route/folder 'product' rendered in dashboard we can just rename the product folder from 'product' into '@product'
