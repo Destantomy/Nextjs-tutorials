@@ -6,7 +6,11 @@ async function getData() {
     
     // local api
     const res = await fetch('http://localhost:3000/api/product', {
-        cache: 'no-store',
+        cache: 'force-cache',
+        next: {
+            tags: ['products'],
+            // revalidate: 15,
+        }
     });
 
     if(!res.ok) {

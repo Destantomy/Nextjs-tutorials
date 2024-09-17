@@ -20,6 +20,12 @@ const data = [
         price: 52,
         image: 'https://www.yonex.com/media/catalog/product/3/a/3ax88s-t_417-1_02.png?quality=80&fit=bounds&height=300&width=240&canvas=240:300'
     },
+    {
+        id: 4,
+        title: 'YONEX ASTROX 88 S TOUR',
+        price: 52,
+        image: 'https://www.yonex.com/media/catalog/product/3/a/3ax88s-t_417-1_02.png?quality=80&fit=bounds&height=300&width=240&canvas=240:300'
+    },
 ];
 
 export async function GET(request: NextResponse) {
