@@ -1,30 +1,30 @@
-import DetailProduct from "@/app/product/[[...slug]]/page";
+import DetailProduct from "@/app/product/page";
 import { NextResponse } from "next/server";
 
 const data = [
     {
         id: 1,
-        title: 'YONEX ASTROX 88 D PRO',
-        price: 50,
-        image: 'https://www.yonex.com/media/catalog/product/3/a/3ax88d-p_076-1_02.png?quality=80&fit=bounds&height=300&width=240&canvas=240:300'
+        title: 'Nike Mercurial Vapor 16 Elite',
+        price: 248,
+        image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/54449b69-7cc3-4459-b772-276fa932b9ee/ZM+VAPOR+16+ELITE+FG.png'
     },
     {
         id: 2,
-        title: 'YONEX ASTROX 3 DG HF',
-        price: 65,
-        image: 'https://www.yonex.com/media/catalog/product/a/x/ax3dg_hf.png?quality=80&fit=bounds&height=300&width=240&canvas=240:300'
+        title: 'Nike Mercurial Superfly 10 Elite',
+        price: 280,
+        image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5f77fa98-433d-4bd7-a762-967b6fab8f01/ZM+SUPERFLY+10+ELITE+FG.png'
     },
     {
         id: 3,
-        title: 'YONEX ASTROX 88 S TOUR',
-        price: 52,
-        image: 'https://www.yonex.com/media/catalog/product/3/a/3ax88s-t_417-1_02.png?quality=80&fit=bounds&height=300&width=240&canvas=240:300'
+        title: 'Nike Phantom GX 2 Elite',
+        price: 254,
+        image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/3873d1b3-d130-4fcd-b0e7-b607d0cc7287/PHANTOM+GX+II+ELITE+FG.png'
     },
     {
         id: 4,
-        title: 'YONEX ASTROX 88 S TOUR',
-        price: 52,
-        image: 'https://www.yonex.com/media/catalog/product/3/a/3ax88s-t_417-1_02.png?quality=80&fit=bounds&height=300&width=240&canvas=240:300'
+        title: 'Nike Phantom Luna 2 Elite',
+        price: 222,
+        image: 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f1026add-f08b-47d8-84cb-40a8ba1194a1/PHANTOM+LUNA+II+ELITE+FG.png'
     },
 ];
 
