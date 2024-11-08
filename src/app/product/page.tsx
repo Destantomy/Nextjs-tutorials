@@ -14,10 +14,10 @@ export default async function ProductPage(props: ProductPageProps) {
                 
 <Link
 href={`/product/detail/${product.id}`}
-key={product.id} className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-5 place-items-center">
+key={product.id} className="w-11/12 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 my-5 place-items-center">
         <img className="p-10 rounded object-cover h-90 w-full" src={product.image} alt="product image" />
     <div className="px-5 pb-5">
-            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{product.title}</h5>
+            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{product.name}</h5>
         <div className="flex items-center mt-2.5 mb-5">
             <div className="flex items-center space-x-1 rtl:space-x-reverse">
                 <svg className="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
