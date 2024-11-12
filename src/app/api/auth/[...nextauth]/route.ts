@@ -1,3 +1,5 @@
+import { login } from "@/app/lib/firebase/service";
+import { compare } from "bcrypt";
 import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
 import Credentials from "next-auth/providers/credentials";
@@ -21,14 +23,15 @@ const authOptions: NextAuthOptions = {
                     email: string;
                     password: string;
                 };
-                const user: any = {
-                    id: 1,
-                    name: 'desta',
-                    email: 'desta@gmail.com',
-                    role: 'admin',
-                }
-                if (email === 'desta@gmail.com' && password === '1234') {
-                    return user;
+                const user: any = await login({email});
+                if (user){
+                    const passwordConfirm = await compare(password, user.password);
+                    if (passwordConfirm) {
+                        return user;
+                    }
+                    return null;
+                } else {
+                    return null;
                 }
             },
         }),
