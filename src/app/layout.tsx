@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google'
 import Navbar from './navbar'
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { SessionProvider } from 'next-auth/react';
 
 const disabledNavbar = ['/login', '/register'];
 
@@ -26,10 +27,12 @@ const inter = Inter({ subsets: ['latin'] })
   return (
     <html lang="en">
       <body className={inter.className}>
-        {!disabledNavbar.includes(pathName) && <Navbar/>}
+        <SessionProvider>
+          {!disabledNavbar.includes(pathName) && <Navbar/>}
         {/* <div>Layout: {state}</div> */}
         {/* <button onClick={() => setState(state+1)}>Click</button> */}
         {children}
+        </SessionProvider>
         </body>
     </html>
   )
