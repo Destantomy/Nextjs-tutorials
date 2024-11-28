@@ -1,6 +1,7 @@
-import { collection, doc, getDoc, getDocs, getFirestore, where, query, addDoc } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, getFirestore, where, query, addDoc, updateDoc } from "firebase/firestore";
 import app from "./init";
 import bcrypt from 'bcrypt';
+import { update } from "firebase/database";
 
 const firestore = getFirestore(app);
 
@@ -71,5 +72,30 @@ export async function login(data: {email: string}) {
         return user[0];
     } else {
         return null;
+    }
+}
+
+export async function loginWithGoogle(data: any, callback: any) {
+    const q = query(
+        collection(firestore, 'users'),
+        where('email', '==', data.email),
+    );
+
+    const snapshot = await getDocs(q);
+    const user: any = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+    }));
+
+    if(user.length > 0) {
+        data.role = user[0].role;
+        await updateDoc(doc(firestore, 'users', user[0].id), data).then(() => {
+            callback({status: true, data: data});
+        });
+    } else {
+        data.role = 'member';
+        await addDoc(collection(firestore, 'users'), data).then(() => {
+            callback({status: true, data: data});
+        })
     }
 }
