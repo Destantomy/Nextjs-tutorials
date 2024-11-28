@@ -71,6 +71,8 @@ export default function Login({ searchParams }: any) {
 							<div className="relative">
 								<button className="bg-blue-500 text-white rounded-md px-2 py-1">{isLoading ? 'Log you in' : 'Login'}</button>
 							</div>
+								<hr />
+								<button type="button" onClick={() => signIn('ggole', {callbackUrl, redirect: false})} className="bg-blue-500 text-white rounded-md px-2 py-1">Login with Google</button>
 							{error !== '' && (<div className="text-red-600 font-bold mb-3 flex-col">{error}</div>)}
 							<div>
 								<p>Did not have any account? 
