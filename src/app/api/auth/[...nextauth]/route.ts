@@ -8,7 +8,7 @@ const authOptions: NextAuthOptions = {
     session: {
         strategy: 'jwt',
     },
-    secret: 'desta11234',
+    secret: process.env.NEXTAUTH_SECRET,
     providers: [
         Credentials({
             type: 'credentials',

@@ -5,11 +5,12 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function Login() {
-
+export default function Login({ searchParams }: any) {
+	console.log(searchParams.callbackUrl);
 	const { push } = useRouter();
 	const [error, setError] = useState('');
 	const [isLoading, setLoading] = useState(false);
+	const callbackUrl = searchParams.callbackUrl || '/';
 
 	const handleLogin = async (e: any) => {
 		e.preventDefault();
@@ -20,12 +21,12 @@ export default function Login() {
 				redirect: false,
 				email: e.target.email.value,
 				password: e.target.password.value,
-				callbackUrl: '/dashboard',
+				callbackUrl,
 			});
 			if (!res?.error) {
 				e.target.reset();
 				setLoading(false);
-				push('/dashboard');
+				push(callbackUrl);
 			} else {
 				setLoading(false);
 				if(res.status === 401) {

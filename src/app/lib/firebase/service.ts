@@ -41,7 +41,7 @@ export async function register(
     if(users.length > 0) {
         return {status: false, statusCode: 400, message: 'email already exits'};
     } else {
-        data.role = 'admin';
+        data.role = 'member';
 
         // password hashing
         data.password = await bcrypt.hash(data.password, 10);
