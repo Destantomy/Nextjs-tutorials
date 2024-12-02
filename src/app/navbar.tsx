@@ -1,6 +1,7 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Navbar() {
     const pathName = usePathname();
@@ -8,7 +9,7 @@ export default function Navbar() {
 
     return(
         <nav className="flex bg-gray-800 py-4 px-5 justify-between">
-            <div className="flex">
+            <div className="flex items-center h-100">
             <h1 className="text-white">This Navbar</h1>
             <ul className="flex ml-10">
                 <Link href='/'>
@@ -24,9 +25,10 @@ export default function Navbar() {
             </div>
             <div>
                 {status === 'authenticated' ? (
-                    <div className="flex">
+                    <div className="flex justify-center items-center">
+                        <Image src='/images/profile.png' width={200} height={200} alt='profile.png' className="w-10 h-10 rounded-full"/>
                         <h4 className="text-white mr-5">{session?.user?.fullname}</h4>
-                        <button className="bg-white rounded-md px-5 text-sm h-5 cursor-pointer"
+                        <button className="bg-white rounded-md px-5 text-sm h-5 cursor-pointer mr-3"
                     onClick={() => signOut()}>Logout</button>
                     </div>
                 ) : (
