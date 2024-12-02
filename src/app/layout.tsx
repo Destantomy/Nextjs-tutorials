@@ -2,7 +2,7 @@
 
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Quicksand } from 'next/font/google'
 import Navbar from './navbar'
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
@@ -10,7 +10,7 @@ import { SessionProvider } from 'next-auth/react';
 
 const disabledNavbar = ['/login', '/register'];
 
-const inter = Inter({ subsets: ['latin'] })
+const quicksand = Quicksand({ subsets: ['latin'] })
 // enable below code, it just for layout-template testing
 // export const metadata: Metadata = {
   //   title: 'Create Next App',
@@ -26,7 +26,7 @@ const inter = Inter({ subsets: ['latin'] })
   // const [state, setState] = useState(0);
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={quicksand.className}>
         <SessionProvider>
           {!disabledNavbar.includes(pathName) && <Navbar/>}
         {/* <div>Layout: {state}</div> */}
